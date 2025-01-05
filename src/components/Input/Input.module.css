@@ -1,0 +1,35 @@
+.wrapper {
+  margin-bottom: 1rem;
+}
+
+.Input {
+  width: 100%;
+  display: block;
+  font-size: 1rem;
+  padding: 0.8rem;
+  background: #eeeeee;
+  border: 1px solid #eeeeee;
+  border-radius: 0.4rem;
+  transition: all 0.1s linear;
+}
+
+.Input:hover,
+.Input:focus {
+  outline: none;
+  border-color: #ffbb11;
+  background: white;
+  box-shadow: 0 0 0 3px #ffeeaa;
+}
+
+.label {
+  display: block;
+  font-size: 1rem;
+  line-height: 1;
+  padding-bottom: 0.5rem;
+}
+
+.error {
+  color: #ff3311;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}

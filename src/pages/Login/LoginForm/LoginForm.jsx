@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import apiConfig from '../../../api/api.config';
+import Input from '../../../components/Input/Input';
+import Button from '../../../components/Button/Button';
 
 async function login(credential) {
   const response = await fetch(`${apiConfig.baseUrl}/json/jwt-auth/v1/token`, {
@@ -31,17 +33,21 @@ export default () => {
     <section>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
-        <input
+        <Input
+          name="username"
+          label="Usuário"
           type="text"
           value={username}
           onChange={({ target: { value } }) => setUsername(value)}
         />
-        <input
+        <Input
+          name="password"
+          label="Senha"
           type="password"
           value={password}
           onChange={({ target: { value } }) => setPassword(value)}
         />
-        <button>Entrar</button>
+        <Button>Entrar</Button>
       </form>
       <Link to="/login/create">Cadastrar</Link>
     </section>
