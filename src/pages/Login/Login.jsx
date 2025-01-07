@@ -1,8 +1,13 @@
 import React from 'react';
 import styles from './Login.module.css';
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 export default () => {
+  const { logged } = useAuth();
+
+  if (logged) return <Navigate to="/" />;
+
   return (
     <div className={styles.Login}>
       <Outlet />

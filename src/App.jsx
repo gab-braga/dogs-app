@@ -1,3 +1,4 @@
+import { AuthProvider } from './context/AuthContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
@@ -11,17 +12,19 @@ import LoginResetPassword from './pages/Login/LoginResetPassword/LoginResetPassw
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />}>
-          <Route path="" element={<LoginForm />} />
-          <Route path="create" element={<LoginCreate />} />
-          <Route path="lost" element={<LoginLostPassword />} />
-          <Route path="reset" element={<LoginResetPassword />} />
-        </Route>
-      </Routes>
-      <Footer />
+      <AuthProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />}>
+            <Route path="" element={<LoginForm />} />
+            <Route path="create" element={<LoginCreate />} />
+            <Route path="lost" element={<LoginLostPassword />} />
+            <Route path="reset" element={<LoginResetPassword />} />
+          </Route>
+        </Routes>
+        <Footer />
+      </AuthProvider>
     </BrowserRouter>
   );
 }
