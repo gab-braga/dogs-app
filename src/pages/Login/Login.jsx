@@ -9,7 +9,7 @@ export default () => {
   if (logged) return <Navigate to="/" />;
 
   return (
-    <div className={styles.Login}>
+    <div className={styles.login}>
       <Outlet />
     </div>
   );

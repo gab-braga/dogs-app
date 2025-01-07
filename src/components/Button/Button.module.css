@@ -1,4 +1,4 @@
-.Button {
+.button {
   min-width: 8rem;
   font-size: 1rem;
   font-family: var(--type-first);
@@ -11,13 +11,13 @@
   transition: all 0.1s linear;
 }
 
-.Button:hover,
-.Button:focus {
+.button:hover,
+.button:focus {
   outline: none;
   box-shadow: 0 0 0 3px #ffeeaa, 0 0 0 4px #ffbb11;
 }
 
-.Button:disabled {
+.button:disabled {
   opacity: 0.5;
   cursor: wait;
 }

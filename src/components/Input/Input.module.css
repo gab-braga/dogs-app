@@ -2,7 +2,7 @@
   margin-bottom: 1rem;
 }
 
-.Input {
+.input {
   width: 100%;
   display: block;
   font-size: 1rem;
@@ -13,8 +13,8 @@
   transition: all 0.1s linear;
 }
 
-.Input:hover,
-.Input:focus {
+.input:hover,
+.input:focus {
   outline: none;
   border-color: #ffbb11;
   background: white;

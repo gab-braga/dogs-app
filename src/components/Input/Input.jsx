@@ -8,7 +8,7 @@ export default ({ name, label, type, value, error, onChange, onBlur }) => {
         {label}
       </label>
       <input
-        className={styles.Input}
+        className={styles.input}
         id={name}
         name={name}
         type={type}

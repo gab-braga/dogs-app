@@ -8,7 +8,7 @@ export default () => {
   const { logged, logout } = useAuth();
 
   return (
-    <header className={styles.Header}>
+    <header className={styles.header}>
       <nav className={[styles.nav, 'container'].join(' ')}>
         <Link className={styles.logo} to="/" aria-label="Dogs - Home">
           <Dog />
