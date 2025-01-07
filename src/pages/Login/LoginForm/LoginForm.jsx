@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Input from '../../../components/Input/Input';
 import Button from '../../../components/Button/Button';
-import useInput from '../../../hookes/useInput';
+import useInput from '../../../hooks/useInput';
 import { useAuth } from '../../../context/AuthContext';
 
 export default () => {
@@ -12,7 +12,7 @@ export default () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    if (isFormValid) {
+    if (isFormValid()) {
       const formData = {
         username: username.value,
         password: password.value,
