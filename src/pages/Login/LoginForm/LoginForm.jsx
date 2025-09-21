@@ -4,6 +4,9 @@ import Input from '../../../components/Input/Input';
 import Button from '../../../components/Button/Button';
 import useInput from '../../../hooks/useInput';
 import { useAuth } from '../../../context/AuthContext';
+import Error from '../../../components/Helper/Error/Error';
+import styles from './LoginForm.module.css';
+import stylesBtn from '../../../components/Button/Button.module.css';
 
 export default () => {
   const { loadding, error, login } = useAuth();
@@ -31,9 +34,9 @@ export default () => {
   }
 
   return (
-    <section>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+    <section className="animeLeft">
+      <h1 className="title">Login</h1>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <Input name="username" label="Usuário" type="text" {...username} />
         <Input name="password" label="Senha" type="password" {...password} />
         {loadding ? (
@@ -41,9 +44,14 @@ export default () => {
         ) : (
           <Button>Entrar</Button>
         )}
-        {error && <p>{error}</p>}
+        {<Error error={error} />}
       </form>
-      <Link to="/login/create">Cadastrar</Link>
+      <Link className={styles.perdeu} to="/login/perdeu">Perdeu a Senha?</Link>
+      <div className={styles.cadastro}>
+        <h2 className={styles.subtitle}>Cadastre-se</h2>
+        <p>Ainda não possui conta? Cadastre-se no site.</p>
+        <Link className={stylesBtn.button} to="/login/criar">Cadastrar</Link>
+      </div>
     </section>
   );
 };
