@@ -1,0 +1,23 @@
+.login {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.login::before {
+    content: "";
+    display: block;
+    background: url("../../assets/login.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+@media (max-width: 40rem) {
+    .login {
+        grid-template-columns: 1fr;
+    }
+
+    .login::before {
+        display: none;
+    }
+}
