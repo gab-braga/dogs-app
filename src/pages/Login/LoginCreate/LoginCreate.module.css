@@ -1,0 +1,11 @@
+.form {
+  margin-bottom: 2rem;
+  max-width: 30rem;
+  padding: 1rem;
+}
+
+@media (max-width: 40rem) {
+  .form {
+    max-width: initial;
+  }
+}
