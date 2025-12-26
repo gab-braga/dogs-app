@@ -5,7 +5,7 @@ import Dog from '../../assets/dogs.svg?react';
 import { useAuth } from '../../context/AuthContext';
 
 export default () => {
-  const { logged, logout } = useAuth();
+  const { logged, user } = useAuth();
 
   return (
     <header className={styles.header}>
@@ -13,10 +13,16 @@ export default () => {
         <Link className={styles.logo} to="/" aria-label="Dogs - Home">
           <Dog />
         </Link>
-        {logged && <button onClick={logout}>Sair</button>}
-        <Link className={styles.login} to="/login">
+        
+        {logged ? (
+          <Link to="/p/conta" className={styles.login}>
+          {user.nome}
+        </Link>
+        ) : (
+        <Link to="/login" className={styles.login}>
           Login / Criar
         </Link>
+      )}
       </nav>
     </header>
   );

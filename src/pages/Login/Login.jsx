@@ -6,7 +6,7 @@ import { useAuth } from '../../context/AuthContext';
 export default () => {
   const { logged } = useAuth();
 
-  if (logged) return <Navigate to="/" />;
+  if (logged) return <Navigate to="/p/conta" />;
 
   return (
     <div className={styles.login}>

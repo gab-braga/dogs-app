@@ -8,8 +8,11 @@ import LoginForm from './pages/Login/LoginForm/LoginForm';
 import LoginCreate from './pages/Login/LoginCreate/LoginCreate';
 import LoginLostPassword from './pages/Login/LoginLostPassword/LoginLostPassword';
 import LoginResetPassword from './pages/Login/LoginResetPassword/LoginResetPassword';
-import User from './pages/User/User';
 import ProtectedRoute from './components/Helper/Error/ProtectedRoute';
+import User from './pages/User/User';
+import Feed from './pages/Feed/Feed';
+import UserPost from './pages/User/UserPost';
+import UserStats from './pages/User/UserStats';
 
 export default () => {
   return (
@@ -26,6 +29,9 @@ export default () => {
           </Route>
           <Route path="/p" element={<ProtectedRoute />}>
             <Route path="conta" element={<User />}>
+              <Route path="" element={<Feed />} />
+              <Route path="post" element={<UserPost />} />
+              <Route path="stats" element={<UserStats />} />
             </Route>
           </Route>
         </Routes>
