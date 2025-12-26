@@ -9,7 +9,7 @@ import styles from "./LoginForm.module.css";
 import stylesBtn from "../../../components/Button/Button.module.css";
 
 export default () => {
-  const { loadding, error, login } = useAuth();
+  const { loading, error, login } = useAuth();
   const username = useInput("", { required: true });
   const password = useInput("", { required: true });
 
@@ -41,7 +41,7 @@ export default () => {
         <form onSubmit={handleSubmit}>
           <Input name="username" label="Usuário" type="text" {...username} />
           <Input name="password" label="Senha" type="password" {...password} />
-          {loadding ? (
+          {loading ? (
             <Button disabled>Carregando...</Button>
           ) : (
             <Button>Entrar</Button>

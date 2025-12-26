@@ -8,8 +8,10 @@ import LoginForm from './pages/Login/LoginForm/LoginForm';
 import LoginCreate from './pages/Login/LoginCreate/LoginCreate';
 import LoginLostPassword from './pages/Login/LoginLostPassword/LoginLostPassword';
 import LoginResetPassword from './pages/Login/LoginResetPassword/LoginResetPassword';
+import User from './pages/User/User';
+import ProtectedRoute from './components/Helper/Error/ProtectedRoute';
 
-function App() {
+export default () => {
   return (
     <BrowserRouter>
       <AuthProvider>
@@ -22,11 +24,13 @@ function App() {
             <Route path="lost" element={<LoginLostPassword />} />
             <Route path="reset" element={<LoginResetPassword />} />
           </Route>
+          <Route path="/p" element={<ProtectedRoute />}>
+            <Route path="conta" element={<User />}>
+            </Route>
+          </Route>
         </Routes>
         <Footer />
       </AuthProvider>
     </BrowserRouter>
   );
 }
-
-export default App;
