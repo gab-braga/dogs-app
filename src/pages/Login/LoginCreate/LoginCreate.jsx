@@ -25,7 +25,11 @@ export default () => {
       });
       const { response } = await request(url, options);
       if (response.ok) {
-        await login(username.value, password.value);
+        const formData = {
+          username: username.value,
+          password: password.value,
+        };
+        await login(formData);
       }
     }
   }

@@ -9,6 +9,7 @@
   color: #665;
   padding: 0.5rem 0px;
   line-height: 1;
+  margin-top: 1rem;
 }
 
 .perdeu::after {
@@ -19,13 +20,13 @@
   display: block;
 }
 
-.cadatro {
+.cadastro {
   margin-top: 4rem;
 }
 
-.cadatro p {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.cadastro p {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
