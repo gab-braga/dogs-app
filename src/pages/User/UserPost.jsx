@@ -1,7 +1,9 @@
+import UserPhotoPost from "./UserPhotoPost";
+
 export default () => {
-    return (
-        <div>
-            Postar
-        </div>
-    );
+  return (
+    <div>
+      <UserPhotoPost />
+    </div>
+  );
 }

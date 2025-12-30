@@ -4,7 +4,7 @@ const REGEX_EMAIL = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 const REGEX_CPF = /^\d{3}.?\d{3}.?\d{3}-?\d{2}$/;
 const REGEX_CEP = /^\d{5}-?\d{3}$/;
 
-export default (initial, options) => {
+export default (initial, options = {}) => {
   const [value, setValue] = React.useState(initial);
   const [error, setError] = React.useState(null);
 

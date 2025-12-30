@@ -8,7 +8,7 @@ import LoginForm from './pages/Login/LoginForm/LoginForm';
 import LoginCreate from './pages/Login/LoginCreate/LoginCreate';
 import LoginLostPassword from './pages/Login/LoginLostPassword/LoginLostPassword';
 import LoginResetPassword from './pages/Login/LoginResetPassword/LoginResetPassword';
-import ProtectedRoute from './components/Helper/Error/ProtectedRoute';
+import ProtectedRoute from './components/Helper/ProtectedRoute';
 import User from './pages/User/User';
 import Feed from './pages/Feed/Feed';
 import UserPost from './pages/User/UserPost';
