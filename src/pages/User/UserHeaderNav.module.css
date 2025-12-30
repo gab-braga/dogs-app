@@ -1,39 +1,128 @@
 .nav {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }
 
 .nav a,
 .nav button {
-	background: #eeeeee;
-	border-radius: 0.2rem;
-	width: 40px;
-	height: 40px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: 1px solid transparent;
-	transition: 0.1s;
-	cursor: pointer;
+  background: #eeeeee;
+  border-radius: 0.2rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: 0.1s;
+  cursor: pointer;
 }
 
 .nav a:hover,
 .nav a:focus,
 .nav button:hover,
 .nav button:focus {
-	background: #ffffff;
-	box-shadow: 0 0 0 3px #eeeeee;
-	border-color: #333333;
-	outline: none;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px #eeeeee;
+  border-color: #333333;
+  outline: none;
 }
 
 .nav a:global(.active) {
-	background: #ffffff;
-	box-shadow: 0 0 0 3px #ffeeaa;
-	border-color: #ffbb11;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px #ffeeaa;
+  border-color: #ffbb11;
 }
 
 .nav a:global(.active) svg > * {
+  fill: #ffbb11;
+}
+
+.buttonMobile {
+  background: #eeeeee;
+  border-radius: 0.2rem;
+  width: 40px;
+  height: 40px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.buttonMobile::after {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  box-shadow: 0 6px currentColor, 0 -6px currentColor;
+	transition: 0.2s;
+}
+
+.buttonMobile:focus,
+.buttonMobile:hover,
+.buttonMobileActive {
+  background: #ffffff;
+  box-shadow: 0 0 0 3px #ffeeaa;
+  border-color: #ffbb11;
+	color: #ffbb11;
+  outline: none;
+}
+
+.buttonMobileActive::after {
+	transform: rotate(-90deg);
+	width: 4px;
+	height: 4px;
+	box-shadow: 0 8px currentColor, 0 -8px currentColor;
+}
+
+.navMobile {
+	display: block;
+	position: absolute;
+	top: 70px;
+	right: 0px;
+	padding: 0.1rem;
+	background: #ffffff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	border-radius: 0.2rem;
+	transform: translate(-10px);
+	opacity: 0;
+	transition: 0.2s;
+	pointer-events: none;
+}
+
+.navMobile a,
+.navMobile button {
+	display: flex;
+	align-items: center;
+	background: none;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #eeeeee;
+	padding: 0.5rem;
+	cursor: pointer;
+}
+
+.navMobile a:hover svg > *,
+.navMobile button:hover svg > * {
 	fill: #ffbb11;
+}
+
+.navMobile svg {
+	margin-right: 0.5rem;
+}
+
+.navMobile button {
+	border-bottom: none;
+}
+
+.navMobileActive {
+	transform: initial;
+	opacity: 1;
+	z-index: 100;
+	pointer-events: initial;
 }
