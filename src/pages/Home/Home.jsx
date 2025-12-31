@@ -8,7 +8,7 @@ export default () => {
       className="container"
       style={{ marginTop: "4rem" }}
     >
-      <Feed />
+      <Feed global />
     </div>
   );
 };

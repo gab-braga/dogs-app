@@ -5,16 +5,19 @@ import { PHOTOS_GET } from "../../api/api";
 import Loading from "../../components/Helper/Loading/Loading";
 import styles from "./FeedPhotos.module.css";
 
-export default ({ setModalPhoto }) => {
+export default ({ page, user, setModalPhoto, setInfinite }) => {
   const { data, error, loading, request } = useFetch();
 
   useEffect(() => {
     async function fetchPhotos() {
-      const { url, options } = PHOTOS_GET({ page: 1, total: 10, user: 0 });
-      await request(url, options);
+      const total = 6;
+      const { url, options } = PHOTOS_GET({ page, user, total });
+      const { response, json } = await request(url, options);
+      if (response && response.ok && Array.isArray(json) && json.length < total)
+        setInfinite(false);
     }
     fetchPhotos();
-  }, [request]);
+  }, [page, user, request, setInfinite]);
 
   if (error) return <Error error={error} />;
   if (loading) return <Loading />;
