@@ -95,3 +95,16 @@ export function COMMENT_POST(id, body, token) {
     },
   };
 }
+
+export function PASSWORD_LOST(body) {
+  return {
+    url: `${API_URL}/api/password/lost`,
+    options: {
+      body: JSON.stringify(body),
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    },
+  };
+}
