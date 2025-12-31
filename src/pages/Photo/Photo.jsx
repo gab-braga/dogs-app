@@ -6,6 +6,7 @@ import Error from "../../components/Helper/Error/Error";
 import Loading from "../../components/Helper/Loading/Loading";
 import PhotoContent from "./PhotoContent";
 import styles from "./Photo.module.css"
+import Head from "../../components/Helper/Head/Head";
 
 export default () => {
   const { id } = useParams();
@@ -25,6 +26,7 @@ export default () => {
       className="container"
       style={{ marginTop: "4rem" }}
     >
+      <Head title={data.photo.title} />
       <PhotoContent data={data} single />
     </section>
   );

@@ -20,26 +20,30 @@ export default () => {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />}>
-            <Route path="" element={<LoginForm />} />
-            <Route path="create" element={<LoginCreate />} />
-            <Route path="lost" element={<LoginLostPassword />} />
-            <Route path="reset" element={<LoginResetPassword />} />
-          </Route>
-          <Route path="/p" element={<ProtectedRoute />}>
-            <Route path="conta" element={<User />}>
-              <Route path="" element={<Feed />} />
-              <Route path="post" element={<UserPost />} />
-              <Route path="stats" element={<UserStats />} />
-            </Route>
-            <Route path="photo/:id" element={<Photo />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
+        <div className="App">
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />}>
+                <Route path="" element={<LoginForm />} />
+                <Route path="create" element={<LoginCreate />} />
+                <Route path="lost" element={<LoginLostPassword />} />
+                <Route path="reset" element={<LoginResetPassword />} />
+              </Route>
+              <Route path="/p" element={<ProtectedRoute />}>
+                <Route path="conta" element={<User />}>
+                  <Route path="" element={<Feed />} />
+                  <Route path="post" element={<UserPost />} />
+                  <Route path="stats" element={<UserStats />} />
+                </Route>
+                <Route path="photo/:id" element={<Photo />} />
+              </Route>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </AuthProvider>
     </BrowserRouter>
   );
