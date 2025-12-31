@@ -14,6 +14,7 @@ import Feed from './pages/Feed/Feed';
 import UserPost from './pages/User/UserPost';
 import UserStats from './pages/User/UserStats';
 import Photo from './pages/Photo/Photo';
+import NotFound from './pages/NotFound/NotFound';
 
 export default () => {
   return (
@@ -36,6 +37,7 @@ export default () => {
             </Route>
             <Route path="photo/:id" element={<Photo />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </AuthProvider>

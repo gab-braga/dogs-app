@@ -13,9 +13,7 @@ export default ({ data, single = false }) => {
       <div className={styles.details}>
         <div>
           <p className={styles.author}>
-            <Link to={`/p/profile/${photo.author}`}>
-              @{photo.author}
-            </Link>
+            @{photo.author}
             <span className={styles.views}>
               {photo.acessos}
             </span>
