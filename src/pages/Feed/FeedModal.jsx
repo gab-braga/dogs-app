@@ -3,7 +3,7 @@ import useFetch from "../../hooks/useFetch";
 import styles from "./FeedModal.module.css";
 import { PHOTO_GET } from "../../api/api";
 import Error from "../../components/Helper/Error/Error";
-import Loading from "../../components/Helper/Loading";
+import Loading from "../../components/Helper/Loading/Loading";
 import PhotoContent from "../Photo/PhotoContent";
 
 export default ({ photo, setModalPhoto }) => {

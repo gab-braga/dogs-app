@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import useFetch from "../../hooks/useFetch";
 import FeedPhotoItem from "./FeedPhotoItem";
 import { PHOTOS_GET } from "../../api/api";
-import Loading from "../../components/Helper/Loading";
+import Loading from "../../components/Helper/Loading/Loading";
 import styles from "./FeedPhotos.module.css";
 
 export default ({ setModalPhoto }) => {
