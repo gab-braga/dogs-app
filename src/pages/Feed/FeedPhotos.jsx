@@ -11,8 +11,7 @@ export default ({ setModalPhoto }) => {
   useEffect(() => {
     async function fetchPhotos() {
       const { url, options } = PHOTOS_GET({ page: 1, total: 10, user: 0 });
-      const { json } = await request(url, options);
-      console.log(json);
+      await request(url, options);
     }
     fetchPhotos();
   }, [request]);
