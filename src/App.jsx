@@ -13,6 +13,7 @@ import User from './pages/User/User';
 import Feed from './pages/Feed/Feed';
 import UserPost from './pages/User/UserPost';
 import UserStats from './pages/User/UserStats';
+import Photo from './pages/Photo/Photo';
 
 export default () => {
   return (
@@ -33,6 +34,7 @@ export default () => {
               <Route path="post" element={<UserPost />} />
               <Route path="stats" element={<UserStats />} />
             </Route>
+            <Route path="photo/:id" element={<Photo />} />
           </Route>
         </Routes>
         <Footer />

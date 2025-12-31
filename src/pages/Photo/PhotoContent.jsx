@@ -3,10 +3,10 @@ import styles from "./PhotoContent.module.css"
 import PhotoComments from "./PhotoComments";
 import Image from "../../components/Helper/Image/Image";
 
-export default ({ data }) => {
+export default ({ data, single = false }) => {
   const { photo, comments } = data;
   return (
-    <div className={styles.photo}>
+    <div className={`${styles.photo} ${single ? styles.single : ""}`}>
       <div className={styles.img}>
         <Image src={photo.src} alt={photo.title} />
       </div>
