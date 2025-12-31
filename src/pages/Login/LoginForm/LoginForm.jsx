@@ -49,7 +49,7 @@ export default () => {
           {<Error error={error} />}
         </form>
 
-        <Link className={styles.perdeu} to="/login/reset">
+        <Link className={styles.perdeu} to="/login/lost">
           Perdeu a Senha?
         </Link>
 
